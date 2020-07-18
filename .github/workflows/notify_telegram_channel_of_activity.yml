@@ -14,7 +14,7 @@ jobs:
         env:
           CURRENT_COURSE_YEAR: 2020
         with:
-          to: ${{ secrets.TELEGRAM_CHANNEL }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
+          to: ${{ secrets.-1001232219969 }}
+          token: ${{ secrets.1241697819:AAGHeBCNT9jDEWvvbmLG6vlL4LjzlGVLdF8 }}
           format: markdown
-          args: "${{ secrets.TELEGRAM_USER }} pushed one or more commits to `${{ github.repository }}` for Full Stack Open ${{ env.CURRENT_COURSE_YEAR }}\n\n[Link to Github Repository](https://github.com/${{github.repository}}/)"
+          args: "${{ secrets.@yiffzer }} pushed one or more commits to `${{ github.repository }}` for Full Stack Open ${{ env.CURRENT_COURSE_YEAR }}\n\n[Link to Github Repository](https://github.com/${{github.repository}}/)"
