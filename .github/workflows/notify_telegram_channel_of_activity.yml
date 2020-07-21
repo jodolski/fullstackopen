@@ -17,4 +17,4 @@ jobs:
           to: ${{ secrets.TELEGRAM_CHANNEL }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
-          args: "${{ secrets.TELEGRAM_USER }} pushed one or more commits to `${{ github.repository }}` for Full Stack Open ${{ env.CURRENT_COURSE_YEAR }}\n\n[Link to Github Repository](https://github.com/${{github.repository}}/)"
+          args: "${{ secrets.TELEGRAM_USER }} pushed a commit to `${{ github.repository }}` for Full Stack Open ${{ env.CURRENT_COURSE_YEAR }}\n\n[Link to Github Repository](https://github.com/${{github.repository}}/)"
