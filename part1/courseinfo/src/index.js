@@ -19,20 +19,15 @@ const App = () => {
     }
   ]
 
-  console.log(parts[0].name)
-  console.log(parts[1].name)
-  console.log(parts[2].name)
-  console.log(parts[0].exercises)
-  console.log(parts[1].exercises)
-  console.log(parts[2].exercises)
-
+// Here, we have to change from passing each object to a single array.
+// We aren't going to use x[0].y to pass on a specific property.
+// We'll be using just the array itself (i.e., parts).
+  
   return (
     <div>
       <Header course = {course} />
-      <Content part = {parts[0].name} exercises = {parts[0].exercises} />
-      <Content part = {parts[1].name} exercises = {parts[1].exercises} />
-      <Content part = {parts[2].name} exercises = {parts[2].exercises} />
-      <Total exercises1 = {parts[0].exercises} exercises2 = {parts[1].exercises} exercises3 = {parts[2].exercises} />
+      <Content parts = {parts} />
+      <Total parts = {parts} />
     </div>
   )
 }
@@ -50,7 +45,15 @@ const Header = (props) => {
 const Content = (props) => {
   return (
     <div>
-      <p>{props.part}: {props.exercises}</p>
+      <p>
+        {props.parts[0].name}: {props.parts[0].exercises}
+      </p>
+      <p>
+        {props.parts[1].name}: {props.parts[1].exercises}
+      </p>
+      <p>
+        {props.parts[2].name}: {props.parts[2].exercises}
+      </p>
     </div>
   )
 }
@@ -59,7 +62,7 @@ const Content = (props) => {
 const Total = (props) => {
   return (
     <p>
-      Number of exercises: {props.exercises1 + props.exercises2 + props.exercises3}
+      Number of exercises: {props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises}
     </p>
   )
 }
