@@ -4,28 +4,35 @@ import ReactDOM from 'react-dom'
 // This is the main App component.
 const App = () => {
   const course = 'Half Stack application development'
-  const part1 = {
+  const parts = [
+    {
     name: 'Fundamentals of React',
     exercises: 10
-  }
-  const part2 = {
+    },
+    {
     name: 'Using props to pass data',
     exercises: 7
-  }
-  const part3 = {
+    },
+    {
     name: 'State of a component',
     exercises: 14
-  }
+    }
+  ]
 
-  console.log(part2.name);
+  console.log(parts[0].name)
+  console.log(parts[1].name)
+  console.log(parts[2].name)
+  console.log(parts[0].exercises)
+  console.log(parts[1].exercises)
+  console.log(parts[2].exercises)
 
   return (
     <div>
       <Header course = {course} />
-      <Content part = {part1.name} exercises = {part1.exercises} />
-      <Content part = {part2.name} exercises = {part2.exercises} />
-      <Content part = {part3.name} exercises = {part3.exercises} />
-      <Total exercises1 = {part1.exercises} exercises2 = {part2.exercises} exercises3 = {part3.exercises} />
+      <Content part = {parts[0].name} exercises = {parts[0].exercises} />
+      <Content part = {parts[1].name} exercises = {parts[1].exercises} />
+      <Content part = {parts[2].name} exercises = {parts[2].exercises} />
+      <Total exercises1 = {parts[0].exercises} exercises2 = {parts[1].exercises} exercises3 = {parts[2].exercises} />
     </div>
   )
 }
@@ -41,7 +48,6 @@ const Header = (props) => {
 
 // This is a Content component.
 const Content = (props) => {
-  console.log("This is the Content console log:");
   return (
     <div>
       <p>{props.part}: {props.exercises}</p>
@@ -51,7 +57,6 @@ const Content = (props) => {
 
 // This is a Total component.
 const Total = (props) => {
-  console.log(props.exercises1);
   return (
     <p>
       Number of exercises: {props.exercises1 + props.exercises2 + props.exercises3}
