@@ -3,37 +3,36 @@ import ReactDOM from 'react-dom'
 
 // This is the main App component.
 const App = () => {
-  const course = 'Half Stack application development'
-  const parts = [
-    {
-    name: 'Fundamentals of React',
-    exercises: 10
-    },
-    {
-    name: 'Using props to pass data',
-    exercises: 7
-    },
-    {
-    name: 'State of a component',
-    exercises: 14
-    }
-  ]
+  const course = {
+    name: 'Half Stack application development',
+    parts: [
+      {
+        name: 'Fundamentals of React',
+        exercises: 10
+      },
+      {
+        name: 'Using props to pass data',
+        exercises: 7
+      },
+      {
+        name: 'State of a component',
+        exercises: 14
+      }
+    ]
+  }
 
-// Here, we have to change from passing each object to a single array.
-// We aren't going to use x[0].y to pass on a specific property.
-// We'll be using just the array itself (i.e., parts).
-  
   return (
     <div>
-      <Header course = {course} />
-      <Content parts = {parts} />
-      <Total parts = {parts} />
+      <Header course = {course.name} />
+      <Content parts = {course.parts} />
+      <Total parts = {course.parts} />
     </div>
   )
 }
 
 // This is a Header component.
 const Header = (props) => {
+  console.log(props)
   return (
     <div>
         <h1>{props.course}</h1>
